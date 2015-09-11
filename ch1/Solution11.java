@@ -6,6 +6,10 @@ public class Solution11 {
 
     public static boolean isUnique(String str) {
 
+        if (str == null) {
+            return true;
+        }
+
         // convert original string to a char array
         char[] chars = str.toCharArray();
 
@@ -24,5 +28,9 @@ public class Solution11 {
         // no same char are found
         System.out.println("String is unique");
         return true;
+    }
+
+    public static void main(String[] args) {
+
     }
 }

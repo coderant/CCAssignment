@@ -7,6 +7,7 @@ public class Solution12 {
 
         // if two strings are of different length, then must not be permutations
         if (str1.length() != str2.length()) {
+            System.out.println("Not permutations");
             return false;
         }
 
