@@ -3,10 +3,12 @@ package ch1;
 public class Solution16 {
     public static String strZip(String str) {
 
+        // StringBuilder to store newly formed String
         StringBuilder zipped = new StringBuilder();
 
         char[] chars = str.toCharArray();
 
+        // the start
         int beginPoint = 0;
         zipped.append(chars[beginPoint]);
 
