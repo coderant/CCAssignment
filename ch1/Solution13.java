@@ -1,13 +1,16 @@
 package ch1;
 
+// idea shared with Minhui Jiang
+
 public class Solution13 {
     public static char[] spaceSwap(char[] chars, int length) {
 
+        // if there's no actual string, then return original string
         if (length == 0) {
             return chars;
         }
 
-        // count spaces
+        // one run, count how many spaces there are
         int spaceCount = 0;
         for (int i = 0; i <= length - 1; i++) {
             if (chars[i] == ' ') {
@@ -15,6 +18,8 @@ public class Solution13 {
             }
         }
 
+        // if there's no space, return original string
+        // check if the char array length is long enough
         if (spaceCount == 0) {
             return chars;
         } else if (spaceCount * 2 + length > chars.length - 1) {
@@ -22,7 +27,9 @@ public class Solution13 {
             return chars;
         }
 
-        //add %20
+        // work backwards
+        // copy every char to it's new place in the longer string
+        // if encounted a space, add %20
         for (int i = length - 1; i >= 0 && spaceCount > 0; i--) {
             if (chars[i] == ' ') {
                 spaceCount--;
@@ -33,6 +40,7 @@ public class Solution13 {
                 chars[i + 2 * spaceCount] = chars[i];
             }
         }
+
         return chars;
 
     }

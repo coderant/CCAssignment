@@ -5,7 +5,7 @@ import ch1.Solution15;
 public class Test15 {
     public static void main(String[] args) {
         test(new String[]{"1213", "1234"},
-                new String[]{"121", "123"},
+                new String[]{"123456", "13456"},
                 new String[]{"113", "123"},
                 new String[]{"12", "12"},
                 new String[]{"1", "2"},
