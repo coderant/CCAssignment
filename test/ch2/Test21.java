@@ -15,15 +15,15 @@ public class Test21 {
     private static void test(int way, String... strs) {
         if (way == 1) {
             for (String str : strs) {
-                System.out.print(ListNode.makeList(str));
+                System.out.print(ListNode.makeCharList(str));
                 System.out.print(" --> ");
-                System.out.println(Solution21NC.removeDupHash(ListNode.makeList(str)));
+                System.out.println(Solution21NC.removeDupHash(ListNode.makeCharList(str)));
             }
         } else if (way == 2) {
             for (String str : strs) {
-                System.out.print(ListNode.makeList(str));
+                System.out.print(ListNode.makeCharList(str));
                 System.out.print(" --> ");
-                System.out.println(Solution21NC.removeDupNoBuffer(ListNode.makeList(str)));
+                System.out.println(Solution21NC.removeDupNoBuffer(ListNode.makeCharList(str)));
             }
         }
     }

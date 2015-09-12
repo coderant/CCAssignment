@@ -11,11 +11,11 @@ public class ListNode {
         this.val = val;
     }
 
-    public static ListNode makeList(String str) {
-        return makeList(str.toCharArray());
+    public static ListNode makeCharList(String str) {
+        return makeCharList(str.toCharArray());
     }
 
-    public static ListNode makeList(char[] chars) {
+    public static ListNode makeCharList(char[] chars) {
 
         ListNode head = new ListNode();
         ListNode current = head;
@@ -25,6 +25,19 @@ public class ListNode {
         }
         return head.next;
 
+    }
+
+    public static ListNode makeIntList(String str) {
+        ListNode head = new ListNode();
+
+        ListNode current = head;
+
+        for (int i = 0; i < str.length(); i++) {
+            current.next = new ListNode(Integer.parseInt(str.substring(i,i+1)));
+            current = current.next;
+        }
+
+        return head.next;
     }
 
     @Override

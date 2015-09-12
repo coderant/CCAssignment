@@ -3,7 +3,6 @@ package ch1;
 public class Solution18NC {
     public static void setZero(int[][] mat) {
 
-
         if (mat.length != 0) {
 
             boolean[][] zeros = new boolean[mat.length][mat[0].length];
