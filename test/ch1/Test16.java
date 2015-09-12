@@ -1,4 +1,4 @@
-package test;
+package test.ch1;
 
 import ch1.Solution16;
 
