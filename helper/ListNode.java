@@ -48,8 +48,10 @@ public class ListNode {
 
         while (current != null) {
             sb.append(current.val);
+            sb.append("->");
             current = current.next;
         }
+        sb.delete(sb.length() - 2, sb.length());
 
         return sb.toString();
     }

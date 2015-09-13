@@ -3,6 +3,10 @@ package ch1;
 public class Solution16 {
     public static String strZip(String str) {
 
+        if (str.length() == 0) {
+            return str;
+        }
+
         // StringBuilder to store newly formed String
         StringBuilder zipped = new StringBuilder();
 
@@ -49,5 +53,20 @@ public class Solution16 {
             return zipped.toString();
         }
 
+    }
+
+    public static void main(String[] args) {
+        test("aaabbbccc",
+                "abc",
+                "aabbcc",
+                "aaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbb",
+                "a",
+                "");
+    }
+
+    private static void test(String... strings) {
+        for (String string : strings) {
+            System.out.println(string + " is converted to: " + strZip(string));
+        }
     }
 }

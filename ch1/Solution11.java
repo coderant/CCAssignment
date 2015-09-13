@@ -20,17 +20,28 @@ public class Solution11 {
         for (int i = 1; i < chars.length; i++) {
             if (chars[i] == chars[i - 1]) {
                 // once same elements are found, return false
-                System.out.println("String is not unique");
+                System.out.println(str + " is not unique");
                 return false;
             }
         }
 
         // no same char are found
-        System.out.println("String is unique");
+        System.out.println(str + " is unique");
         return true;
     }
 
     public static void main(String[] args) {
+        test("Unique wr˜˚∆¨ˆ\"09876œ∑ßåΩ",
+                "Uni df123",
+                "Unique wr˜˚∆¨ˆ\"09876œ∑ßåΩ",
+                "NotUnique˜˜",
+                "  ",
+                "", null);
+    }
 
+    public static void test(String... strs) {
+        for (String str : strs) {
+            isUnique(str);
+        }
     }
 }

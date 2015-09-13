@@ -61,4 +61,17 @@ public class Solution14 {
             return oneCount == 1;
         }
     }
+
+    public static void main(String[] args) {
+        test("12321","23 42 3 4","1","1132");
+    }
+
+    private static void test(String... strings) {
+        for (String str : strings) {
+
+            String result = detectPermu(str) ? "permutation" : "not permutation";
+
+            System.out.println(str + " is " + result);
+        }
+    }
 }
