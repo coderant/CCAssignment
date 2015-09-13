@@ -2,16 +2,6 @@ package ch2;
 
 public class Solution22NC {
 
-    //    structure of ListNode class
-    //    public class ListNode {
-    //        public ListNode next;
-    //        public Object val;
-    //        public ListNode(Object val) {
-    //            this.val = val;
-    //        }
-    //    }
-
-
     public static ListNode23 kthToLast(ListNode23 head, int k) {
         ListNode23 kth = null;
         ListNode23 current = head;

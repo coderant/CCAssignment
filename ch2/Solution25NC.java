@@ -5,7 +5,7 @@ public class Solution25NC {
     public static ListNode25 sumList(ListNode25 l1, ListNode25 l2) {
 
         int carry = 0;
-        int sum = 0;
+        int sum;
 
         ListNode25 results = new ListNode25("Dummy");
 

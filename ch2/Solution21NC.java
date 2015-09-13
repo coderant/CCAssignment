@@ -5,15 +5,6 @@ import java.util.HashSet;
 
 public class Solution21NC {
 
-    //    structure of ListNode class
-    //    public class ListNode {
-    //        public ListNode next;
-    //        public Object val;
-    //        public ListNode(Object val) {
-    //            this.val = val;
-    //        }
-    //    }
-
     public static ListNode23 removeDupHash(ListNode23 head) {
 
         HashSet<Object> hash = new HashSet<>();
