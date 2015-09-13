@@ -1,8 +1,5 @@
 package ch2;
 
-
-import helper.ListNode;
-
 public class Solution25NC {
 
     public static ListNode25 sumList(ListNode25 l1, ListNode25 l2) {
@@ -83,12 +80,12 @@ public class Solution25NC {
 
         System.out.println("Original : ");
 
-        System.out.print(ListNode.makeIntList(string1) + " + " + ListNode.makeIntList(string2) + " = ");
+        System.out.print(ListNode25.makeIntList(string1) + " + " + ListNode25.makeIntList(string2) + " = ");
         System.out.println(Solution25NC.sumList(ListNode25.makeIntList(string1), ListNode25.makeIntList(string2)));
 
         System.out.println("FollowUp : ");
 
-        System.out.print(ListNode.makeIntList(string1) + " + " + ListNode.makeIntList(string2) + " = ");
+        System.out.print(ListNode25.makeIntList(string1) + " + " + ListNode25.makeIntList(string2) + " = ");
         System.out.println(Solution25NC.sumListFollow(ListNode25.makeIntList(string1), ListNode25.makeIntList(string2)));
     }
 

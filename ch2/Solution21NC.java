@@ -68,13 +68,13 @@ public class Solution21NC {
     private static void test(int way, String... strs) {
         if (way == 1) {
             for (String str : strs) {
-                System.out.print(helper.ListNode.makeCharList(str));
+                System.out.print(ListNode21.makeCharList(str));
                 System.out.print(" is converted to ");
                 System.out.println(Solution21NC.removeDupHash(ListNode23.makeCharList(str)));
             }
         } else if (way == 2) {
             for (String str : strs) {
-                System.out.print(helper.ListNode.makeCharList(str));
+                System.out.print(ListNode21.makeCharList(str));
                 System.out.print(" is converted to ");
                 System.out.println(Solution21NC.removeDupNoBuffer(ListNode23.makeCharList(str)));
             }
