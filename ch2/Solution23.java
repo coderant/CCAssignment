@@ -3,9 +3,8 @@ package ch2;
 
 public class Solution23 {
 
+    // kill the scapegoat
     public static void deleteMiddle(ListNode23 node) {
-
-        // kill the scapegoat
         node.val = node.next.val;
         node.next = node.next.next;
     }

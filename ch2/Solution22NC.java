@@ -23,6 +23,8 @@ public class Solution22NC {
         return kth;
     }
 
+    // Test Method Below
+
     public static void main(String[] args) {
         ListNode23 list1 = ListNode23.makeCharList("987659321");
         ListNode23 list2 = ListNode23.makeCharList("111111119");

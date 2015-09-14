@@ -1,9 +1,13 @@
 package ch1;
 
-public class Solution19NC {
+public class Solution19 {
+
+    /* A string: abcdefg, after rotated becomes efgabcde
+    *  this can be written as AB -> BA, where A represent the first part of the string and B the latter
+    *  thus the rotated BA will always be a substring of ABAB */
 
     public static boolean isRotation(String str1, String str2) {
-        return isSubString(str1, str1 + str2);
+        return isSubString(str2, str1 + str1);
     }
 
     private static boolean isSubString(String subString, String target) {

@@ -2,7 +2,6 @@ package ch2;
 
 import java.util.HashSet;
 
-
 public class Solution21NC {
 
     public static ListNode23 removeDupHash(ListNode23 head) {

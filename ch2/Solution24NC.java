@@ -23,6 +23,8 @@ public class Solution24NC {
         return leftDummy.next;
     }
 
+    // Test Method Below
+
     public static void main(String[] args) {
         ListNode24 list1 = ListNode24.makeIntList("112311");
         ListNode24 list2 = ListNode24.makeIntList("987123456");
