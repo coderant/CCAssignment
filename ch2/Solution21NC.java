@@ -4,12 +4,12 @@ import java.util.HashSet;
 
 public class Solution21NC {
 
-    public static ListNode23 removeDupHash(ListNode23 head) {
+    public static ListNode21 removeDupHash(ListNode21 head) {
 
         HashSet<Object> hash = new HashSet<>();
 
-        ListNode23 node = head;
-        ListNode23 prev = null;
+        ListNode21 node = head;
+        ListNode21 prev = null;
 
         while(node != null) {
 
@@ -30,13 +30,13 @@ public class Solution21NC {
         return head;
     }
 
-    public static ListNode23 removeDupNoBuffer(ListNode23 head) {
-        ListNode23 currentNode = head;
+    public static ListNode21 removeDupNoBuffer(ListNode21 head) {
+        ListNode21 currentNode = head;
 
 
         while (currentNode != null) {
-            ListNode23 prev = currentNode;
-            ListNode23 followingNode = currentNode.next;
+            ListNode21 prev = currentNode;
+            ListNode21 followingNode = currentNode.next;
             while (followingNode != null) {
                 if (followingNode.val.equals(currentNode.val)) {
                     prev.next = followingNode.next;
@@ -60,13 +60,13 @@ public class Solution21NC {
             for (String str : strs) {
                 System.out.print(ListNode21.makeCharList(str));
                 System.out.print(" is converted to ");
-                System.out.println(Solution21NC.removeDupHash(ListNode23.makeCharList(str)));
+                System.out.println(Solution21NC.removeDupHash(ListNode21.makeCharList(str)));
             }
         } else if (way == 2) {
             for (String str : strs) {
                 System.out.print(ListNode21.makeCharList(str));
                 System.out.print(" is converted to ");
-                System.out.println(Solution21NC.removeDupNoBuffer(ListNode23.makeCharList(str)));
+                System.out.println(Solution21NC.removeDupNoBuffer(ListNode21.makeCharList(str)));
             }
         }
     }

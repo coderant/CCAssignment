@@ -2,9 +2,9 @@ package ch2;
 
 public class Solution22NC {
 
-    public static ListNode23 kthToLast(ListNode23 head, int k) {
-        ListNode23 kth = null;
-        ListNode23 current = head;
+    public static ListNode22 kthToLast(ListNode22 head, int k) {
+        ListNode22 kth = null;
+        ListNode22 current = head;
 
         while (current != null) {
             if (k >= 2) {
@@ -26,8 +26,8 @@ public class Solution22NC {
     // Test Method Below
 
     public static void main(String[] args) {
-        ListNode23 list1 = ListNode23.makeCharList("987659321");
-        ListNode23 list2 = ListNode23.makeCharList("111111119");
+        ListNode22 list1 = ListNode22.makeCharList("987659321");
+        ListNode22 list2 = ListNode22.makeCharList("111111119");
 
         System.out.println(kthToLast(list1, 4));
         System.out.println(kthToLast(list2, 1));
