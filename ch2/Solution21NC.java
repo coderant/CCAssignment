@@ -4,12 +4,12 @@ import java.util.HashSet;
 
 public class Solution21NC {
 
-    public static ListNode21 removeDupHash(ListNode21 head) {
+    public static ListNode removeDupHash(ListNode head) {
 
         HashSet<Object> hash = new HashSet<>();
 
-        ListNode21 node = head;
-        ListNode21 prev = null;
+        ListNode node = head;
+        ListNode prev = null;
 
         while(node != null) {
 
@@ -30,13 +30,13 @@ public class Solution21NC {
         return head;
     }
 
-    public static ListNode21 removeDupNoBuffer(ListNode21 head) {
-        ListNode21 currentNode = head;
+    public static ListNode removeDupNoBuffer(ListNode head) {
+        ListNode currentNode = head;
 
 
         while (currentNode != null) {
-            ListNode21 prev = currentNode;
-            ListNode21 followingNode = currentNode.next;
+            ListNode prev = currentNode;
+            ListNode followingNode = currentNode.next;
             while (followingNode != null) {
                 if (followingNode.val.equals(currentNode.val)) {
                     prev.next = followingNode.next;
@@ -58,74 +58,74 @@ public class Solution21NC {
     private static void test(int way, String... strs) {
         if (way == 1) {
             for (String str : strs) {
-                System.out.print(ListNode21.makeCharList(str));
+                System.out.print(ListNode.makeCharList(str));
                 System.out.print(" is converted to ");
-                System.out.println(Solution21NC.removeDupHash(ListNode21.makeCharList(str)));
+                System.out.println(Solution21NC.removeDupHash(ListNode.makeCharList(str)));
             }
         } else if (way == 2) {
             for (String str : strs) {
-                System.out.print(ListNode21.makeCharList(str));
+                System.out.print(ListNode.makeCharList(str));
                 System.out.print(" is converted to ");
-                System.out.println(Solution21NC.removeDupNoBuffer(ListNode21.makeCharList(str)));
+                System.out.println(Solution21NC.removeDupNoBuffer(ListNode.makeCharList(str)));
             }
         }
     }
 
+    static class ListNode {
+        public ListNode next;
+        public Object val;
+
+        public ListNode() {
+        }
+
+        public ListNode(Object val) {
+            this.val = val;
+        }
+
+        public static ListNode makeCharList(String str) {
+            return makeCharList(str.toCharArray());
+        }
+
+        public static ListNode makeCharList(char[] chars) {
+
+            ListNode head = new ListNode();
+            ListNode current = head;
+            for (char c : chars) {
+                current.next = new ListNode(c);
+                current = current.next;
+            }
+            return head.next;
+
+        }
+
+        public static ListNode makeIntList(String str) {
+            ListNode head = new ListNode();
+
+            ListNode current = head;
+
+            for (int i = 0; i < str.length(); i++) {
+                current.next = new ListNode(Integer.parseInt(str.substring(i, i + 1)));
+                current = current.next;
+            }
+
+            return head.next;
+        }
+
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+
+            ListNode current = this;
+
+            while (current != null) {
+                sb.append(current.val);
+                sb.append("->");
+                current = current.next;
+            }
+            sb.delete(sb.length() - 2, sb.length());
+
+            return sb.toString();
+        }
+    }
 }
 
-class ListNode21 {
-    public ListNode21 next;
-    public Object val;
-
-    public ListNode21() {
-    }
-
-    public ListNode21(Object val) {
-        this.val = val;
-    }
-
-    public static ListNode21 makeCharList(String str) {
-        return makeCharList(str.toCharArray());
-    }
-
-    public static ListNode21 makeCharList(char[] chars) {
-
-        ListNode21 head = new ListNode21();
-        ListNode21 current = head;
-        for (char c : chars) {
-            current.next = new ListNode21(c);
-            current = current.next;
-        }
-        return head.next;
-
-    }
-
-    public static ListNode21 makeIntList(String str) {
-        ListNode21 head = new ListNode21();
-
-        ListNode21 current = head;
-
-        for (int i = 0; i < str.length(); i++) {
-            current.next = new ListNode21(Integer.parseInt(str.substring(i, i + 1)));
-            current = current.next;
-        }
-
-        return head.next;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-
-        ListNode21 current = this;
-
-        while (current != null) {
-            sb.append(current.val);
-            sb.append("->");
-            current = current.next;
-        }
-        sb.delete(sb.length() - 2, sb.length());
-
-        return sb.toString();
-    }
-}

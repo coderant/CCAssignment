@@ -25,15 +25,15 @@ public class Solution28 {
     // algorithm reference: http://stackoverflow.com/questions/2663115/how-to-detect-a-loop-in-a-linked-list
 
     // return null if no loop found
-    public static ListNode28 findLoop(ListNode28 head) {
+    public static ListNode findLoop(ListNode head) {
 
         if (head == null || head.next == null) {
-            return new ListNode28(null);
+            return new ListNode(null);
         }
 
 
-        ListNode28 rabbit = head;
-        ListNode28 turtle = head;
+        ListNode rabbit = head;
+        ListNode turtle = head;
 
         while (true) {
 
@@ -44,7 +44,7 @@ public class Solution28 {
             }
 
             if (rabbit == null) {
-                return new ListNode28(null);
+                return new ListNode(null);
             }
 
             if (rabbit == turtle) {
@@ -66,12 +66,12 @@ public class Solution28 {
 
     // Test Method Below
 
-    private static HashMap<Character, ListNode28> nodesMap = new HashMap<>();
+    private static HashMap<Character, ListNode> nodesMap = new HashMap<>();
 
-    private static ListNode28 makeList(String string) {
+    private static ListNode makeList(String string) {
 
-        ListNode28 dummy = new ListNode28("Dummy");
-        ListNode28 current = dummy;
+        ListNode dummy = new ListNode("Dummy");
+        ListNode current = dummy;
 
         for (int i = 0; i < string.length(); i++) {
 
@@ -80,7 +80,7 @@ public class Solution28 {
             if (nodesMap.containsKey(val)) {
                 current.next = nodesMap.get(val);
             } else {
-                current.next = new ListNode28(val);
+                current.next = new ListNode(val);
                 nodesMap.put(val, current.next);
             }
             current = current.next;
@@ -98,7 +98,7 @@ public class Solution28 {
     private static void test(String... strings) {
         for (String string : strings) {
 
-            ListNode28 l1 = makeList(string);
+            ListNode l1 = makeList(string);
             System.out.print("entry point in list " + string + " is : ");
             System.out.println(findLoop(l1).val);
 
@@ -106,62 +106,61 @@ public class Solution28 {
     }
 
 
+    static class ListNode {
+        public ListNode next;
+        public Object val;
 
+        public ListNode() {
+        }
+
+        public ListNode(Object val) {
+            this.val = val;
+        }
+
+        public static ListNode makeCharList(String str) {
+            return makeCharList(str.toCharArray());
+        }
+
+        public static ListNode makeCharList(char[] chars) {
+
+            ListNode head = new ListNode();
+            ListNode current = head;
+            for (char c : chars) {
+                current.next = new ListNode(c);
+                current = current.next;
+            }
+            return head.next;
+
+        }
+
+        public static ListNode makeIntList(String str) {
+            ListNode head = new ListNode();
+
+            ListNode current = head;
+
+            for (int i = 0; i < str.length(); i++) {
+                current.next = new ListNode(Integer.parseInt(str.substring(i, i + 1)));
+                current = current.next;
+            }
+
+            return head.next;
+        }
+
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+
+            ListNode current = this;
+
+            while (current != null) {
+                sb.append(current.val);
+                sb.append("->");
+                current = current.next;
+            }
+            sb.delete(sb.length() - 2, sb.length());
+
+            return sb.toString();
+        }
+    }
 }
 
-class ListNode28 {
-    public ListNode28 next;
-    public Object val;
-
-    public ListNode28() {
-    }
-
-    public ListNode28(Object val) {
-        this.val = val;
-    }
-
-    public static ListNode28 makeCharList(String str) {
-        return makeCharList(str.toCharArray());
-    }
-
-    public static ListNode28 makeCharList(char[] chars) {
-
-        ListNode28 head = new ListNode28();
-        ListNode28 current = head;
-        for (char c : chars) {
-            current.next = new ListNode28(c);
-            current = current.next;
-        }
-        return head.next;
-
-    }
-
-    public static ListNode28 makeIntList(String str) {
-        ListNode28 head = new ListNode28();
-
-        ListNode28 current = head;
-
-        for (int i = 0; i < str.length(); i++) {
-            current.next = new ListNode28(Integer.parseInt(str.substring(i, i + 1)));
-            current = current.next;
-        }
-
-        return head.next;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-
-        ListNode28 current = this;
-
-        while (current != null) {
-            sb.append(current.val);
-            sb.append("->");
-            current = current.next;
-        }
-        sb.delete(sb.length() - 2, sb.length());
-
-        return sb.toString();
-    }
-}

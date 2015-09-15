@@ -4,13 +4,13 @@ import java.util.HashMap;
 
 public class Solution27NC {
 
-    public static ListNode27 findIntersection(ListNode27 l1, ListNode27 l2) {
+    public static ListNode findIntersection(ListNode l1, ListNode l2) {
 
         int length1 = 0;
         int length2 = 0;
 
-        ListNode27 current1 = l1;
-        ListNode27 current2 = l2;
+        ListNode current1 = l1;
+        ListNode current2 = l2;
 
         while (current1.next != null || current2.next != null) {
 
@@ -51,12 +51,12 @@ public class Solution27NC {
 
     // Test Method Below
 
-    private static HashMap<Character, ListNode27> nodesMap = new HashMap<>();
+    private static HashMap<Character, ListNode> nodesMap = new HashMap<>();
 
-    private static ListNode27 makeList(String string) {
+    private static ListNode makeList(String string) {
 
-        ListNode27 dummy = new ListNode27("Dummy");
-        ListNode27 current = dummy;
+        ListNode dummy = new ListNode("Dummy");
+        ListNode current = dummy;
 
         for (int i = 0; i < string.length(); i++) {
 
@@ -65,7 +65,7 @@ public class Solution27NC {
             if (nodesMap.containsKey(val)) {
                 current.next = nodesMap.get(val);
             } else {
-                current.next = new ListNode27(val);
+                current.next = new ListNode(val);
                 nodesMap.put(val, current.next);
             }
             current = current.next;
@@ -82,62 +82,61 @@ public class Solution27NC {
     }
 
 
+    static class ListNode {
+        public ListNode next;
+        public Object val;
 
+        public ListNode() {
+        }
+
+        public ListNode(Object val) {
+            this.val = val;
+        }
+
+        public static ListNode makeCharList(String str) {
+            return makeCharList(str.toCharArray());
+        }
+
+        public static ListNode makeCharList(char[] chars) {
+
+            ListNode head = new ListNode();
+            ListNode current = head;
+            for (char c : chars) {
+                current.next = new ListNode(c);
+                current = current.next;
+            }
+            return head.next;
+
+        }
+
+        public static ListNode makeIntList(String str) {
+            ListNode head = new ListNode();
+
+            ListNode current = head;
+
+            for (int i = 0; i < str.length(); i++) {
+                current.next = new ListNode(Integer.parseInt(str.substring(i, i + 1)));
+                current = current.next;
+            }
+
+            return head.next;
+        }
+
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+
+            ListNode current = this;
+
+            while (current != null) {
+                sb.append(current.val);
+                sb.append("->");
+                current = current.next;
+            }
+            sb.delete(sb.length() - 2, sb.length());
+
+            return sb.toString();
+        }
+    }
 }
 
-class ListNode27 {
-    public ListNode27 next;
-    public Object val;
-
-    public ListNode27() {
-    }
-
-    public ListNode27(Object val) {
-        this.val = val;
-    }
-
-    public static ListNode27 makeCharList(String str) {
-        return makeCharList(str.toCharArray());
-    }
-
-    public static ListNode27 makeCharList(char[] chars) {
-
-        ListNode27 head = new ListNode27();
-        ListNode27 current = head;
-        for (char c : chars) {
-            current.next = new ListNode27(c);
-            current = current.next;
-        }
-        return head.next;
-
-    }
-
-    public static ListNode27 makeIntList(String str) {
-        ListNode27 head = new ListNode27();
-
-        ListNode27 current = head;
-
-        for (int i = 0; i < str.length(); i++) {
-            current.next = new ListNode27(Integer.parseInt(str.substring(i, i + 1)));
-            current = current.next;
-        }
-
-        return head.next;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-
-        ListNode27 current = this;
-
-        while (current != null) {
-            sb.append(current.val);
-            sb.append("->");
-            current = current.next;
-        }
-        sb.delete(sb.length() - 2, sb.length());
-
-        return sb.toString();
-    }
-}

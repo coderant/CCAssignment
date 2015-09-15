@@ -2,16 +2,16 @@ package ch2;
 
 public class Solution25NC {
 
-    public static ListNode25 sumList(ListNode25 l1, ListNode25 l2) {
+    public static ListNode sumList(ListNode l1, ListNode l2) {
 
         int carry = 0;
         int sum;
 
-        ListNode25 results = new ListNode25("Dummy");
+        ListNode results = new ListNode("Dummy");
 
-        ListNode25 current1 = l1;
-        ListNode25 current2 = l2;
-        ListNode25 result = results;
+        ListNode current1 = l1;
+        ListNode current2 = l2;
+        ListNode result = results;
 
         int value1;
         int value2;
@@ -24,7 +24,7 @@ public class Solution25NC {
             sum = value1 + value2 + carry;
             carry = sum / 10;
 
-            result.next = new ListNode25(sum % 10);
+            result.next = new ListNode(sum % 10);
             result = result.next;
 
             current1 = current1 == null ? null : current1.next;
@@ -32,31 +32,31 @@ public class Solution25NC {
         }
 
         if (carry != 0) {
-            result.next = new ListNode25(carry);
+            result.next = new ListNode(carry);
         }
 
         return results.next;
     }
 
-    public static ListNode25 sumListFollow(ListNode25 l1, ListNode25 l2) {
+    public static ListNode sumListFollow(ListNode l1, ListNode l2) {
 
         return reverse(sumList(reverse(l1), reverse(l2)));
     }
 
-    private static ListNode25 reverse(ListNode25 l) {
+    private static ListNode reverse(ListNode l) {
         if (l == null || l.next == null) {
             return l;
         }
 
-        ListNode25 current = l;
-        ListNode25 next = current.next;
-        ListNode25 prev = null;
+        ListNode current = l;
+        ListNode next = current.next;
+        ListNode prev = null;
 
         while (next != null) {
 
             current.next = prev;
 
-            ListNode25 tmp = next;
+            ListNode tmp = next;
             next = next.next;
             prev = current;
             current = tmp;
@@ -81,70 +81,70 @@ public class Solution25NC {
 
         System.out.println("Original : ");
 
-        System.out.print(ListNode25.makeIntList(string1) + " + " + ListNode25.makeIntList(string2) + " = ");
-        System.out.println(Solution25NC.sumList(ListNode25.makeIntList(string1), ListNode25.makeIntList(string2)));
+        System.out.print(ListNode.makeIntList(string1) + " + " + ListNode.makeIntList(string2) + " = ");
+        System.out.println(Solution25NC.sumList(ListNode.makeIntList(string1), ListNode.makeIntList(string2)));
 
         System.out.println("FollowUp : ");
 
-        System.out.print(ListNode25.makeIntList(string1) + " + " + ListNode25.makeIntList(string2) + " = ");
-        System.out.println(Solution25NC.sumListFollow(ListNode25.makeIntList(string1), ListNode25.makeIntList(string2)));
+        System.out.print(ListNode.makeIntList(string1) + " + " + ListNode.makeIntList(string2) + " = ");
+        System.out.println(Solution25NC.sumListFollow(ListNode.makeIntList(string1), ListNode.makeIntList(string2)));
     }
 
+    static class ListNode {
+        public ListNode next;
+        public Object val;
+
+        public ListNode() {
+        }
+
+        public ListNode(Object val) {
+            this.val = val;
+        }
+
+        public static ListNode makeCharList(String str) {
+            return makeCharList(str.toCharArray());
+        }
+
+        public static ListNode makeCharList(char[] chars) {
+
+            ListNode head = new ListNode();
+            ListNode current = head;
+            for (char c : chars) {
+                current.next = new ListNode(c);
+                current = current.next;
+            }
+            return head.next;
+
+        }
+
+        public static ListNode makeIntList(String str) {
+            ListNode head = new ListNode();
+
+            ListNode current = head;
+
+            for (int i = 0; i < str.length(); i++) {
+                current.next = new ListNode(Integer.parseInt(str.substring(i, i + 1)));
+                current = current.next;
+            }
+
+            return head.next;
+        }
+
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+
+            ListNode current = this;
+
+            while (current != null) {
+                sb.append(current.val);
+                sb.append("->");
+                current = current.next;
+            }
+            sb.delete(sb.length() - 2, sb.length());
+
+            return sb.toString();
+        }
+    }
 }
 
-class ListNode25 {
-    public ListNode25 next;
-    public Object val;
-
-    public ListNode25() {
-    }
-
-    public ListNode25(Object val) {
-        this.val = val;
-    }
-
-    public static ListNode25 makeCharList(String str) {
-        return makeCharList(str.toCharArray());
-    }
-
-    public static ListNode25 makeCharList(char[] chars) {
-
-        ListNode25 head = new ListNode25();
-        ListNode25 current = head;
-        for (char c : chars) {
-            current.next = new ListNode25(c);
-            current = current.next;
-        }
-        return head.next;
-
-    }
-
-    public static ListNode25 makeIntList(String str) {
-        ListNode25 head = new ListNode25();
-
-        ListNode25 current = head;
-
-        for (int i = 0; i < str.length(); i++) {
-            current.next = new ListNode25(Integer.parseInt(str.substring(i, i + 1)));
-            current = current.next;
-        }
-
-        return head.next;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-
-        ListNode25 current = this;
-
-        while (current != null) {
-            sb.append(current.val);
-            sb.append("->");
-            current = current.next;
-        }
-        sb.delete(sb.length() - 2, sb.length());
-
-        return sb.toString();
-    }
-}
