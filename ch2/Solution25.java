@@ -3,8 +3,9 @@ package ch2;
 public class Solution25 {
 
 
-    // Part I:
-    //
+    // Part I: two pointers at each of the listNode
+    // variable carry is the carry-over from lower digits
+    // after each sum, we update the carry and the corresponding node in result List
     public static ListNode sumList(ListNode l1, ListNode l2) {
 
         int carry = 0;
