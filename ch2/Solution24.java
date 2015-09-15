@@ -1,24 +1,35 @@
 package ch2;
 
-public class Solution24NC {
+public class Solution24 {
+
     public static ListNode partition(ListNode head, int value) {
+
+        // set up two new dummy listNode: leftDummy and rightDummy
         ListNode leftDummy = new ListNode("Dummy");
         ListNode rightDummy = new ListNode("Dummy");
         ListNode left = leftDummy;
         ListNode right = rightDummy;
 
         while (head != null) {
+
+            // if we encounter a val that is less value, we link this node to the left List
             if (((int) head.val) < value) {
                 left.next = head;
                 left = left.next;
             } else {
+
+                // if the val equals or is bigger than value, we link this node to the right List
                 right.next = head;
                 right = right.next;
             }
+            // move to next node
             head = head.next;
         }
 
+        // joint to list together
         left.next = rightDummy.next;
+
+        // end the list
         right.next = null;
         return leftDummy.next;
     }
@@ -34,7 +45,7 @@ public class Solution24NC {
         ListNode list6 = ListNode.makeIntList("1234567890");
 
 
-        System.out.println(Solution24NC.partition(list2, 99));
+        System.out.println(Solution24.partition(list2, 99));
     }
 
     static class ListNode {

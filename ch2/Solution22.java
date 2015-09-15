@@ -1,7 +1,11 @@
 package ch2;
 
-public class Solution22NC {
+public class Solution22 {
 
+
+    // two pointers: kth and current
+    // kth will move only after current pointer has already moved k steps
+    // so that when current reaches the end of the list, kth is point to the kth element from last node
     public static ListNode kthToLast(ListNode head, int k) {
         ListNode kth = null;
         ListNode current = head;

@@ -1,7 +1,10 @@
 package ch2;
 
-public class Solution25NC {
+public class Solution25 {
 
+
+    // Part I:
+    //
     public static ListNode sumList(ListNode l1, ListNode l2) {
 
         int carry = 0;
@@ -38,6 +41,9 @@ public class Solution25NC {
         return results.next;
     }
 
+    // Follow Up:
+    // we reverser l1 and l2 so that they are of the same order as original question
+    // then we add them by the same method and then reverse the result
     public static ListNode sumListFollow(ListNode l1, ListNode l2) {
 
         return reverse(sumList(reverse(l1), reverse(l2)));
@@ -82,12 +88,12 @@ public class Solution25NC {
         System.out.println("Original : ");
 
         System.out.print(ListNode.makeIntList(string1) + " + " + ListNode.makeIntList(string2) + " = ");
-        System.out.println(Solution25NC.sumList(ListNode.makeIntList(string1), ListNode.makeIntList(string2)));
+        System.out.println(Solution25.sumList(ListNode.makeIntList(string1), ListNode.makeIntList(string2)));
 
         System.out.println("FollowUp : ");
 
         System.out.print(ListNode.makeIntList(string1) + " + " + ListNode.makeIntList(string2) + " = ");
-        System.out.println(Solution25NC.sumListFollow(ListNode.makeIntList(string1), ListNode.makeIntList(string2)));
+        System.out.println(Solution25.sumListFollow(ListNode.makeIntList(string1), ListNode.makeIntList(string2)));
     }
 
     static class ListNode {

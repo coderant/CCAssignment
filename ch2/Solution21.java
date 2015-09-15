@@ -2,7 +2,7 @@ package ch2;
 
 import java.util.HashSet;
 
-public class Solution21NC {
+public class Solution21 {
 
     // Method 1:
     // using HashSet to store all existing node.val
@@ -70,13 +70,13 @@ public class Solution21NC {
             for (String str : strs) {
                 System.out.print(ListNode.makeCharList(str));
                 System.out.print(" is converted to ");
-                System.out.println(Solution21NC.removeDupHash(ListNode.makeCharList(str)));
+                System.out.println(Solution21.removeDupHash(ListNode.makeCharList(str)));
             }
         } else if (way == 2) {
             for (String str : strs) {
                 System.out.print(ListNode.makeCharList(str));
                 System.out.print(" is converted to ");
-                System.out.println(Solution21NC.removeDupNoBuffer(ListNode.makeCharList(str)));
+                System.out.println(Solution21.removeDupNoBuffer(ListNode.makeCharList(str)));
             }
         }
     }
