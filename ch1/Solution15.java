@@ -49,6 +49,8 @@ public class Solution15 {
         return true;
     }
 
+    // Test Method Below
+
     public static void main(String[] args) {
         test(new String[]{"1213", "1234"},
                 new String[]{"123456", "13456"},

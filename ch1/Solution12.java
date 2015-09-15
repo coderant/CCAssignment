@@ -34,6 +34,8 @@ public class Solution12 {
         return true;
     }
 
+    // Test Method Below
+
     public static void main(String[] args) {
         isPermutation("1 23","3221");
         isPermutation("1223","3221");

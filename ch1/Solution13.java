@@ -44,6 +44,8 @@ public class Solution13 {
         return chars;
     }
 
+    // Test Method Below
+
     public static void main(String[] args) {
         String[] strs = {"I am who            ",
                 "  1 2 3 4 5                          ",

@@ -30,6 +30,8 @@ public class Solution11 {
         return true;
     }
 
+    // Test Method Below
+
     public static void main(String[] args) {
         test("Unique wr˜˚∆¨ˆ\"09876œ∑ßåΩ",
                 "Uni df123",

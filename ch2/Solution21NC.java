@@ -4,10 +4,14 @@ import java.util.HashSet;
 
 public class Solution21NC {
 
+    // Method 1:
+    // using HashSet to store all existing node.val
+    // if encountered a existed node.val, delete this node
     public static ListNode removeDupHash(ListNode head) {
 
         HashSet<Object> hash = new HashSet<>();
 
+        // keep track of the parent node in order to delete
         ListNode node = head;
         ListNode prev = null;
 
@@ -30,23 +34,29 @@ public class Solution21NC {
         return head;
     }
 
+    // Method 2:
+    // using two pointer current and runner node.
+    // All nodes before current are unique.
+    // runner always check all node after current, making sure that all same val as current.val are deleted
     public static ListNode removeDupNoBuffer(ListNode head) {
         ListNode currentNode = head;
 
 
         while (currentNode != null) {
             ListNode prev = currentNode;
-            ListNode followingNode = currentNode.next;
-            while (followingNode != null) {
-                if (followingNode.val.equals(currentNode.val)) {
-                    prev.next = followingNode.next;
+            ListNode runner = currentNode.next;
+            while (runner != null) {
+                if (runner.val.equals(currentNode.val)) {
+                    prev.next = runner.next;
                 }
-                followingNode = followingNode.next;
+                runner = runner.next;
             }
             currentNode = currentNode.next;
         }
         return head;
     }
+
+    // Test Method Below
 
     public static void main(String[] args) {
         test(1, "abcabccccccc", "ABC", "1111111111222", "2");
