@@ -44,7 +44,6 @@ public class Solution103 {
     // Test Method Below
 
     public static void main(String[] args) {
-
         test();
         test();
         test();
@@ -56,27 +55,20 @@ public class Solution103 {
         test();
         test();
         test();
-
     }
 
     private static void test() {
         Random generator = new Random();
 
         int[] list = generateList(1231, generator.nextInt(30) + 1);
-
         int shift = generator.nextInt(list.length);
-
         list = shiftArray(list, shift);
-
         int index = generator.nextInt(list.length);
 
 
         System.out.println(Arrays.toString(list));
-
         System.out.println("The target number is " + list[index] + " at index[" + index + "]");
-
         System.out.println("searched result is : " + searchInRotated(list, list[index]));
-
     }
 
     private static int[] generateList(int maximum, int length) {
