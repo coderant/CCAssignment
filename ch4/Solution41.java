@@ -40,7 +40,6 @@ public class Solution41 {
 
 
     static class Node {
-        Node[] in;
         Node[] out;
     }
 

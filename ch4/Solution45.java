@@ -2,11 +2,14 @@ package ch4;
 
 public class Solution45 {
 
-    public static boolean checkBalance(Node root) {
-        return checkBalance(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+    // recursively validate a root's left child and right child,
+    // and at the mean time updating the maxValue or minValue of it's children's lower and upper bound
+
+    public static boolean validate(Node root) {
+        return validate(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
     }
 
-    private static boolean checkBalance(Node current,int min, int max) {
+    private static boolean validate(Node current, int min, int max) {
 
         if (current == null) {
             return true;
@@ -16,7 +19,7 @@ public class Solution45 {
             return false;
         }
 
-        return checkBalance(current.left, min, current.val) && checkBalance(current.right, current.val, max);
+        return validate(current.left, min, current.val) && validate(current.right, current.val, max);
 
     }
 

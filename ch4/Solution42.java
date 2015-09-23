@@ -5,8 +5,10 @@ import java.util.ArrayList;
 
 public class Solution42 {
 
+    // always choose the middle int as the root of the BST
+    // recursively construct the leftBST and rightBST
+    // link leftBST root and rightBST
     public static Node generateBST(int[] array) {
-
         return generateBST(array, 0, array.length - 1);
     }
 
@@ -33,7 +35,7 @@ public class Solution42 {
 
     public static void main(String[] args) {
 
-        int length = 30;
+        int length = 2;
 
         int[] array = new int[length];
 

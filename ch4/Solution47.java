@@ -5,6 +5,13 @@ import java.util.HashMap;
 
 public class Solution47 {
 
+    // topological sort
+    // first construct the nodes and directed connections
+    // for i
+    //   find a node with an in-degree of 0
+    //   remove this node from the graph
+    //   increment i
+
     public static ArrayList<Node> getOrder(String str, char[][] dependencies) {
 
         HashMap<Character, Node> hashMap = new HashMap<>();

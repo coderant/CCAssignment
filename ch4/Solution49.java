@@ -5,6 +5,10 @@ import java.util.LinkedList;
 
 public class Solution49 {
 
+    // recursively get sequence
+    // the root node need to come first and then left subtree sequence and right subtree sequence can take turns and be mixed
+    // once all possible sequence has been added, return the new sequence
+
     public static ArrayList<LinkedList<Integer>> getSequence(Node root) {
 
         ArrayList<LinkedList<Integer>> result = new ArrayList<>();
@@ -20,8 +24,6 @@ public class Solution49 {
             result.add(list);
             return result;
         }
-
-
 
         ArrayList<LinkedList<Integer>> leftResult = getSequence(root.left);
         ArrayList<LinkedList<Integer>> rightResult = getSequence(root.right);
@@ -67,9 +69,6 @@ public class Solution49 {
 
         return result;
     }
-
-
-
 
     // Test Method Below
 

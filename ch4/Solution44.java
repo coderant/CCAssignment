@@ -2,6 +2,10 @@ package ch4;
 
 public class Solution44 {
 
+    // getHeight method returns -1 if current tree is unbalanced, returns the current max height if current is balanced
+    // recursively get all getHeight
+    // if root is -1 then it's unbalanced, if not, then is balanced
+
     public static boolean checkBalanced(Node root) {
 
         return getHeight(root) != -1;
@@ -24,9 +28,7 @@ public class Solution44 {
         }
     }
 
-
-
-
+    // Test Method Below
 
     static class Node {
         Node left;

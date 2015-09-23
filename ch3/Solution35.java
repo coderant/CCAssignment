@@ -4,8 +4,10 @@ import java.util.Stack;
 
 public class Solution35 {
 
-    // use a new stack
-    // keep track of the
+    // use a new stack to store the result
+    // keep track the smallest element so far.
+    // if current element is smaller than the min element, push min to the new stack
+    // if current element is not smaller than the min element, push the current element to the new stack, keep the min element
     public static Stack<Integer> sortStack(Stack<Integer> stack) {
 
         Stack<Integer> sorted = new Stack<>();

@@ -2,7 +2,12 @@ package ch4;
 
 import java.util.ArrayList;
 
-public class Solution411Uncompleted {
+public class Solution411 {
+
+    // when insert and delete node from the BT
+    // keep track of a list of all nodes currently in the BT
+    // when getRandom is called. The algorithm will generate a random index and return the node at this index.
+
     static class RandomBT {
 
         class Node {
@@ -22,6 +27,10 @@ public class Solution411Uncompleted {
 
         public RandomBT() {
             nodes = new ArrayList<>();
+        }
+
+        public Node getRandomNode() {
+            return nodes.get(((int) (Math.random() * nodes.size())) - 1);
         }
 
         public void insert(int foo) {
@@ -71,18 +80,8 @@ public class Solution411Uncompleted {
         }
 
         public Node delete(int foo) {
-            Node node = find(foo);
 
-            if (node == null) {
-                return null;
-            }
-
-            // TODO
             return null;
-        }
-
-        public Node getRandomNode() {
-            return nodes.get(((int) (Math.random() * nodes.size())) - 1);
         }
     }
 }

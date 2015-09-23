@@ -53,8 +53,8 @@ public class Solution43 {
             array[i] = i;
         }
 
-        Solution42.BTreePrinter.printNode(Solution42.generateBST(array));
-        System.out.println();
+//        Solution42.BTreePrinter.printNode(Solution42.generateBST(array));
+//        System.out.println();
 
     }
 
