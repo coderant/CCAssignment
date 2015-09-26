@@ -2,7 +2,7 @@ package ch10;
 
 public class Solution104Unfinished {
 
-    public int search(int target, Listy listy) {
+    public int search(int targetX, Listy listy) {
 
         int i = 2;
 
@@ -28,5 +28,6 @@ public class Solution104Unfinished {
         public int elementAt(int index) {
             return index < list.length ? list[index] : -1;
         }
+
     }
 }
