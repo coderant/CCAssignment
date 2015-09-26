@@ -29,25 +29,16 @@ public class Solution49 {
         ArrayList<LinkedList<Integer>> rightResult = getSequence(root.right);
 
         for (LinkedList<Integer> leftArrayList : leftResult) {
-            LinkedList<Integer> subList = new LinkedList<>();
-            subList.add(root.val);
-
             for (LinkedList<Integer> rightArrayList : rightResult) {
-                if (leftArrayList.size() == 0 && rightArrayList.size() == 0) {
-                    result.add(subList);
-                }
-                if (leftArrayList.size() == 0) {
-                    result.add(addList(subList, rightArrayList));
-                    continue;
-                }
 
-                if (rightArrayList.size() == 0) {
-                    result.add(addList(subList, leftArrayList));
-                    continue;
-                }
+                LinkedList<LinkedList<Integer>> allCombinations = new LinkedList<>();
 
-                result.add(addList(subList, addList(leftArrayList, rightArrayList)));
-                result.add(addList(subList, addList(rightArrayList, leftArrayList)));
+                addCombination(null, leftArrayList, rightArrayList, allCombinations);
+
+                for (LinkedList<Integer> oneCombination : allCombinations) {
+                    oneCombination.addFirst(root.val);
+                    result.add(oneCombination);
+                }
 
             }
         }
@@ -55,19 +46,30 @@ public class Solution49 {
 
     }
 
-    private static LinkedList<Integer> addList(LinkedList<Integer> target, LinkedList<Integer> list) {
+    private static void addCombination(LinkedList<Integer> prefix,
+                                       LinkedList<Integer> left,
+                                       LinkedList<Integer> right,
+                                       LinkedList<LinkedList<Integer>> results) {
 
-        LinkedList<Integer> result = new LinkedList<>();
-
-        for (int val : target) {
-            result.add(val);
+        if (prefix == null) {
+            prefix = new LinkedList<>();
         }
 
-        for (int val : list) {
-            result.add(val);
+        if (left.size() == 0 && right.size() == 0) {
+            results.add((new LinkedList<>(prefix)));
         }
 
-        return result;
+        if (!left.isEmpty()) {
+            prefix.add(left.removeFirst());
+            addCombination(prefix, left, right, results);
+            left.addFirst(prefix.removeLast());
+        }
+
+        if (!right.isEmpty()) {
+            prefix.add(right.removeFirst());
+            addCombination(prefix, left, right, results);
+            right.addFirst(prefix.removeLast());
+        }
     }
 
     // Test Method Below

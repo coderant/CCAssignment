@@ -15,6 +15,7 @@ public class Solution411 {
             Node left;
             Node right;
             Node parent;
+            int size;
 
             public Node(int val, Node parent) {
                 this.val = val;
