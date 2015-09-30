@@ -5,6 +5,8 @@ import java.util.Random;
 
 public class Solution103 {
 
+    // binary search
+
     public static int searchInRotated(int[] array, int target) {
 
         int start = 0;

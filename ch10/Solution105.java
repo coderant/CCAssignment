@@ -2,6 +2,9 @@ package ch10;
 
 public class Solution105 {
 
+    // Modified Binary Search
+    // If mid element is empty, search for nearest non-empty spot as new-Mid
+
     public static int find(String[] strings, String target) {
 
         int start = 0;

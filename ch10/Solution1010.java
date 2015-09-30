@@ -2,6 +2,8 @@ package ch10;
 
 public class Solution1010 {
 
+    // Binary Search Tree like tree structure.
+    // Every node store the number of elements less than self
 
     static class Node {
 

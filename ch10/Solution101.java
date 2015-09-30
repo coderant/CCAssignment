@@ -6,6 +6,9 @@ public class Solution101 {
 
     // list is in increasing order
 
+    // Merge two lists from backwards
+    // At every place select the larger element in two arrays
+
     public static int[] sortedMerge(int[] a, int aLength, int[] b, int bLength) {
 
         int currentA = aLength - 1;

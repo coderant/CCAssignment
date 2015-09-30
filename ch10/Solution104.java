@@ -4,6 +4,9 @@ import java.util.ArrayList;
 
 public class Solution104 {
 
+    // First search for the end element. When searching, search in 2, 4, 8, 16, 32... pattern
+    // After end was found, binary search normally
+
     public static int search(int targetX, Listy listy) {
 
         int i = 2;

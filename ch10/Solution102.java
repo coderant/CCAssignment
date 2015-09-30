@@ -6,6 +6,11 @@ import java.util.HashMap;
 
 public class Solution102 {
 
+    
+    // For all strings, convert each string to a char array and then sort this array.
+    // Iterate through all char array, store all same char array's index
+    // Iterate through the char array map, add all indexes to the result
+
     public static ArrayList<String> sort(ArrayList<String> strings) {
 
         HashMap<String, ArrayList<Integer>> index = new HashMap<>();

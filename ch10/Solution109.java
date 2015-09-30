@@ -5,6 +5,12 @@ import java.util.Random;
 
 public class Solution109 {
 
+    // search starts from the lower left corner
+    // if the element is larger than target, move up
+    // if the element is smaller than target, move right
+    // if the element is target, return the index
+    // if moving out of range, return NOT FOUND
+
     public static int[] search(int[][] matrix, int target) {
 
         int m = matrix.length;
