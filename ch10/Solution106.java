@@ -2,7 +2,11 @@ package ch10;
 
 public class Solution106 {
 
-    // I would use radix sort with strings
-    // from the first char to last char sort one column by one column
+    /**
+     * Cut the data into different segments
+     * Sort each segment in different machines
+     * Collect all results
+     * Merge sort all results
+     * */
 
 }

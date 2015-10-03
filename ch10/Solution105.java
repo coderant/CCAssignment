@@ -10,7 +10,9 @@ public class Solution105 {
         int start = 0;
         int end = strings.length - 1;
 
-        while (start + 1 < end) {
+        while (true) {
+
+            int interval = start - end;
 
             int mid = start + (end - start) / 2;
 
@@ -42,6 +44,10 @@ public class Solution105 {
                 return mid;
             } else {
                 end = mid;
+            }
+
+            if (start - end == interval) {
+                break;
             }
         }
 
@@ -78,7 +84,7 @@ public class Solution105 {
     public static void main(String[] args) {
         String[] strings = new String[]{"at", "", "", "", "", "", "ball", "bbb", "", "", "", "", "car", "", "", "dad", "", "", "", "hah"};
 
-        System.out.println(find(strings, "bbb"));
+        System.out.println(find(strings, "att"));
     }
 
 
