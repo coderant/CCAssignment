@@ -1,0 +1,10 @@
+take 1 pill from bottle one;
+take 2 pills from bottle two;
+take 3 pills from bottle three;
+...
+
+then count how many more 0.1 grams are there.
+
+whole weight - 210
+------------------ = bottle number of the 1.1 pills
+       0.1
