@@ -1,0 +1,5 @@
+the probability of not colliding = 1 - the probability of colliding
+                                 = 1 - ((1/2)^3 * 2)
+                                 = 3/4
+
+N-vertex polygon: 1 - (1/2)^n * 2 = 1 - (1/2)^(n-1)

@@ -1,0 +1,10 @@
+Game 1:
+Expected success = p
+
+Game 2:
+Expected sucesss = 3(1-p)p^2
+
+Let p > 3(1-p)p^2
+thus p > 0
+
+so we should always play Game 2
